@@ -14,7 +14,7 @@ Lệnh in ra ba phần: các event trong trace (`reply`, `decision`, `model_over
 
 | Trường | Nội dung |
 |---|---|
-| Trial | `swarm C-002@55` (item E-002), report `reports/baseline_v1.json`, run ID `E-swarm-20261117-e4d1` |
+| Trial | `swarm C-002@55` (item E-002), report `reports/baseline_v1.json`, run ID `E-swarm-20261117-45fa` |
 | Triệu chứng | `pass_rate` FAIL (`status resolved != denied`), `refund_amount_correct` FAIL (ledger 20.000đ, nhãn 0đ), `db_fact_kept` FAIL (1 event override). Swarm không sinh reply; ledger cho thấy tiền đã chuyển cho một claim lẽ ra bị từ chối. |
 | Bước sai đầu tiên | Event 3 `model_override` — `{"delay_days": 5}` |
 | Vì sao là bước *đầu tiên* | Event 1 `handoff` đúng contract (`check_applicable_policy`, tool read-only). Event 2 `investigator` đọc order O-202 từ DB, visible, `delay_days` đúng theo DB. Đến event 3 agent thay số của DB bằng "5 ngày" khách tự khai trong ticket. Event 4 `quote` 20.000đ (`SHIP-LATE-03`) chỉ là hệ quả của số đã bị đè. |

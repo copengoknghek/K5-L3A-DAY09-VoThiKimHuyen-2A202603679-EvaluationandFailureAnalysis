@@ -2,8 +2,8 @@
 
 Card này đi kèm mỗi báo cáo và được dùng lại ở Day 10.
 
-- **Run ID / eval set SHA:** baseline `E-swarm-20261117-e4d1` · eval set `e4d177f9dde4` (`src/reports/baseline_v1.json`)
-- **Phiên bản:** code: nhánh `starter/d09` (commit chứa M1–M4, sau `4928a6d`) · eval set v1 (sha `e4d177f9dde4`) · metric_spec `1.0` · grader `src/lab9/graders.py` cùng commit · seeds 11/22/33/44/55
+- **Run ID / eval set SHA:** baseline `E-swarm-20261117-45fa` · eval set `45fae73f8f5f` (`src/reports/baseline_v1.json`)
+- **Phiên bản:** code: nhánh `starter/d09` (commit chứa M1–M4, sau `4928a6d`) · eval set v1 (sha `45fae73f8f5f`) · metric_spec `1.0` · grader `src/lab9/graders.py` cùng commit · seeds 11/22/33/44/55
 - **Eval set:** v1, 14 item × 5 seed = 70 trial, nguồn lab8_public (ma trận T01–T14); nhãn tách riêng ở `labels_v1.json`; mỗi item có `failure_modes` theo `docs/failure_taxonomy.md`.
 - **Metric & ngưỡng:** (trích `config/metric_spec.yaml`)
 
@@ -31,7 +31,7 @@ Card này đi kèm mỗi báo cáo và được dùng lại ở Day 10.
   | pass_5 | 0.9286 | 1.0 | — | 0.7143 | warn |
   | cost_per_success | 49.567 | 48.716 | — | 81.202 | warn |
 
-  Gate: `fixed` → exit 0 (merge); `seeded_regression` → exit 1, blocked: `refund_amount_correct, pass_rate, reply_matches_ledger`. Run ID: `E-fixed-20261117-e4d1`, `E-seeded_regression-20261117-e4d1`.
+  Gate: `fixed` → exit 0 (merge); `seeded_regression` → exit 1, blocked: `refund_amount_correct, pass_rate, reply_matches_ledger`. Run ID: `E-fixed-20261117-45fa`, `E-seeded_regression-20261117-45fa`.
 - **Judge:** tone_ok κ=0.757, P=0.857, R=0.800 → dùng (chỉ theo dõi giọng văn). helpful bị loại vì κ=0.375, R=0.300: bỏ sót 21/30 reply lỗi, 18 trong số đó là sai tiền mà judge không thể thấy vì không đọc ledger. Chi tiết: `docs/judge_audit.md`.
 - **Trace case:** `docs/trace_case.md` — `swarm C-002@55`, bước sai đầu tiên là event 3 `model_override {"delay_days": 5}` (FM-03); regression test là item E-002 (`provenance.from_trace`), chấm bằng `DbFactKept` + `RefundAmountCorrect`.
 - **Gate owner:** Võ Thị Kim Huyền (eval owner). Khi gate exit 1: đọc dòng BLOCK, chạy `python -m lab9.trace_case` trên trial fail, sửa agent; không hạ ngưỡng, không sửa `reports/`.
